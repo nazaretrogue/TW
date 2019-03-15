@@ -22,6 +22,27 @@
             </ul>
         </section>
         <main>
+            <form action="procesar.php" method="POST">
+                <p>Autor <input type="text" name="autor"/></p>
+                <p>Título <input type="text" name="titulo"/></p>
+                <p>ISBN <input type="text" name="isbn"/></p>
+                <p>Precio entre <input type="text" name="preciomin"/>
+                   y <input type="text" name="preciomax"/></p>
+                <p>Género<select name="genero">
+                    <option selected>- Elija el género -</option>
+                    <option>Fantasía</option>
+                    <option>Suspenso</option>
+                    <option>Ensayo</option>
+                    <option>Terror</option>
+                    <option>Drama</option>
+                </select></p>
+                <p>Encuadernación
+                    <input type="radio" name="encuaderna" value="dura" checked/>Tapa dura
+                    <input type="radio" name="encuaderna" value="blanda" checked/>Tapa blanda
+                    <input type="radio" name="encuaderna" value="cualquiera" checked/>Cualquiera
+                </p>
+                <input type="submit" value="Buscar"/>
+            </form>
         </main>
         <aside>
             <div>Más vendido
