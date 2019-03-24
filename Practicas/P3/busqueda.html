@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Nazaret Román Guerrero"/>
+        <title>El Lector de Libros</title>
+    </head>
+    <body>
+        <header>
+            <img src="logo.jpg" alt="Logo librería"/>
+            <h1>El Lector de Libros</h1>
+            <p>Contando historias desde hace 100 años</p>
+        </header>
+        <section>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="busqueda.html">Búsqueda</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+            </ul>
+        </section>
+        <main>
+            <form action="procesar.php" method="POST">
+                <p>Autor <input type="text" name="autor"/></p>
+                <p>Título <input type="text" name="titulo"/></p>
+                <p>ISBN <input type="text" name="isbn"/></p>
+                <p>Precio entre <input type="text" name="preciomin"/>
+                   y <input type="text" name="preciomax"/></p>
+                <p>Género<select name="genero">
+                    <option selected>- Elija el género -</option>
+                    <option>Fantasía</option>
+                    <option>Suspenso</option>
+                    <option>Ensayo</option>
+                    <option>Terror</option>
+                    <option>Drama</option>
+                </select></p>
+                <p>Encuadernación
+                    <input type="radio" name="encuaderna" value="dura" checked/>Tapa dura
+                    <input type="radio" name="encuaderna" value="blanda" checked/>Tapa blanda
+                    <input type="radio" name="encuaderna" value="cualquiera" checked/>Cualquiera
+                </p>
+                <input type="submit" value="Buscar"/>
+            </form>
+        </main>
+        <aside>
+            <div>Más vendido
+                <ol>
+                    <li>Memorias de Idhún: la Resistencia</li>
+                    <li>Coma</li>
+                    <li>Antología poética</li>
+                </ol>
+            </div>
+            <div>Más populares
+                <ol>
+                    <li>Robin Cook</li>
+                    <li>Laura Gallego</li>
+                    <li>J.K.Rowling</li>
+                </ol>
+            </div>
+            <div>Géneros destacados
+                <ol>
+                    <li>Suspenso</li>
+                    <li>Ensayo</li>
+                    <li>Fantasía</li>
+                </ol>
+            </div>
+        </aside>
+        <footer>
+            <div>
+                <ul>
+                    <li>Granada</li>
+                    <li><ul>
+                            <li>Reyes Católicos (958123456)</li>
+                            <li>Avda Dilar (958076543)</li>
+                        </ul>
+                    </li>
+                    <li>Málaga</li>
+                    <li><ul>
+                            <li>Marqués de Larios (928123476)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <img src="mail.png" alt="Mail" width="50" height="50"/>
+                <p>lectordelibros@gmail.com</p>
+                <img src="twitter.png" alt="Twitter" width="50" height="50"/>
+                <img src="facebook.png" alt="Facebook" width="50" height="50"/>
+                <img src="pinterest.png" alt="Pinterest" width="50" height="50"/>
+                <img src="wifi.png" alt="Wifi" width="50" height="50"/>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#empresa">La empresa</a></li>
+                    <li><a href="#politica">Política de envío</a></li>
+                    <li><a href="#faq">Preguntas frecuentes</a></li>
+                    <li><a href="#mapa">Mapa del sitio</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

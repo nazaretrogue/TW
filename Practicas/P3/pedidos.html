@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Nazaret Román Guerrero"/>
+        <title>El Lector de Libros</title>
+    </head>
+    <body>
+        <header>
+            <img src="logo.jpg" alt="Logo librería"/>
+            <h1>El Lector de Libros</h1>
+            <p>Contando historias desde hace 100 años</p>
+        </header>
+        <section>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="busqueda.html">Búsqueda</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+            </ul>
+        </section>
+        <main>
+            <div>
+                <ul>
+                    <li>Título <em>El título del libro</em></li>
+                    <li>Autor <em>Pepito Pérez</em></li>
+                    <li>ISBN <em>xxx-xxx-xxx</em></li>
+                    <li>Editorial <em>EditaSL</em></li>
+                    <li>Año <em>1900</em></li>
+                </ul>
+                <p>Texto más o menos extenso con la sinopsis del libro. En esta
+                   parte se pondrá un pequeño resumen de unas líneas del libro
+                   que el cliente quiere para su pedido.</p>
+                <p>PRECIO <em>15 euros</em></p>
+                <img src="pedido.png" alt="pedido" width="100" height="100"/>
+            </div>
+
+            <form action="procesar.php" method="POST">
+                <p>Nombre y apellidos <input type="text" name="nomape"/></p>
+                <p>Dirección de envío <textarea name="direc"></textarea></p>
+                <p>Email <input type="text" name="email"/></p>
+                <p>Número de tarjeta <input type="text" name="tarjeta"/></p>
+                <p>Fecha de caducidad <input type="text" name="caducidad" maxlength="13"/></p>
+                <p>CVC <input type="text" name="cvc" maxlength="4"/></p>
+                <p>Marque si procede
+                    <input type="checkbox" name="opciones" value="condiciones"/> He leído y acepto las condiciones de compra
+                    <input type="checkbox" name="opciones" value="novedades"/> Deseo recibir información sobre novedades
+                    <input type="checkbox" name="opciones" value="regalo"/> Deseo el envío envuelto para regalo
+                </p>
+                <input type="submit" value="Hacer pedido"/>
+            </form>
+        </main>
+        <aside>
+            <div>Más vendido
+                <ol>
+                    <li>Memorias de Idhún: la Resistencia</li>
+                    <li>Coma</li>
+                    <li>Antología poética</li>
+                </ol>
+            </div>
+            <div>Más populares
+                <ol>
+                    <li>Robin Cook</li>
+                    <li>Laura Gallego</li>
+                    <li>J.K.Rowling</li>
+                </ol>
+            </div>
+            <div>Géneros destacados
+                <ol>
+                    <li>Suspenso</li>
+                    <li>Ensayo</li>
+                    <li>Fantasía</li>
+                </ol>
+            </div>
+        </aside>
+        <footer>
+            <div>
+                <ul>
+                    <li>Granada</li>
+                    <li><ul>
+                            <li>Reyes Católicos (958123456)</li>
+                            <li>Avda Dilar (958076543)</li>
+                        </ul>
+                    </li>
+                    <li>Málaga</li>
+                    <li><ul>
+                            <li>Marqués de Larios (928123476)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <img src="mail.png" alt="Mail" width="50" height="50"/>
+                <p>lectordelibros@gmail.com</p>
+                <img src="twitter.png" alt="Twitter" width="50" height="50"/>
+                <img src="facebook.png" alt="Facebook" width="50" height="50"/>
+                <img src="pinterest.png" alt="Pinterest" width="50" height="50"/>
+                <img src="wifi.png" alt="Wifi" width="50" height="50"/>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#empresa">La empresa</a></li>
+                    <li><a href="#politica">Política de envío</a></li>
+                    <li><a href="#faq">Preguntas frecuentes</a></li>
+                    <li><a href="#mapa">Mapa del sitio</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

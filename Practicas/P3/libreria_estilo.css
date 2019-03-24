@@ -1,0 +1,77 @@
+#cabecera{
+    color: dodgerblue;
+}
+
+#cabecera > img{
+    float: left;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+section{
+    clear: both;
+}
+
+#cabecera > h1{
+    font-size: 60px;
+    margin: 20px;
+    margin-top: 70px;
+}
+
+#cabecera > p{
+    font-size: 20px;
+    margin: 10px;
+}
+
+#paginas_indice{
+    background-color: silver;
+    border-width: 3px;
+    border-color: dodgerblue;
+    border-style: solid;
+}
+
+#paginas_indice ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+#paginas_indice li{
+    float: left;
+}
+
+li a{
+    text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+}
+
+#pie{
+    background-color: silver;
+    border-width: 3px;
+    border-color: dodgerblue;
+    border-style: solid;
+}
+
+.ciudad{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ciudad ul{
+    list-style: none;
+}
+
+#redes{
+    margin-left: 500px;
+    margin-top: 0px;
+}
+
+#enlaces_externos{
+    margin-left: 800px;
+    margin-top: 0px;
+}

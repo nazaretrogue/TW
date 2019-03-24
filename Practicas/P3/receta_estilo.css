@@ -1,0 +1,61 @@
+body{
+    background-color: silver;
+}
+
+.ingred{
+    background-color: mediumpurple
+}
+
+.ingred h2{
+    background-color: blueviolet;
+    color: mintcream;
+}
+
+.des h2{
+    background-color: moccasin;
+    border-width: 0px;
+    margin: 0px;
+}
+
+.des{
+    border-width: 15px;
+    border-color: gold;
+    border-style: solid;
+    background-color: palegoldenrod;
+}
+
+.links{
+    background-color: saddlebrown;
+    border-top-width: 20px;
+    border-bottom-width: 20px;
+    border-left-width: 12px;
+    border-right-width: 12px;
+    border-style: solid;
+    border-color: peru;
+    margin: 0px;;
+}
+
+.links ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.links li{
+    float: left;
+}
+
+li a{
+    text-decoration: none;
+    color: lemonchiffon;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px;
+    display: block;
+}
+
+a:hover{
+    background-color: lemonchiffon;
+    color: saddlebrown;
+}
