@@ -1,3 +1,53 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#centro{
+    display: flex;
+}
+
+aside{
+    align-self: flex-start;
+}
+
+main section h2{
+    font-size: 50px;
+    color: navy;
+    text-align: center;
+    text-decoration: underline;
+}
+
+main h3{
+    font-size: 30px;
+    color: dodgerblue;
+}
+
+#martin img,
+#cielo img,
+#relatos img{
+    float: right;
+}
+
+#martin,
+#cielo,
+#relatos{
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+
+main section ul{
+    list-style: none;
+}
+
+main{
+    border: 3px;
+    border-style: solid;
+    border-color: dodgerblue;
+    background-color: silver;
+}
+
 #cabecera{
     color: dodgerblue;
 }
@@ -50,28 +100,37 @@ li a{
     display: block;
 }
 
+#rankings{
+    border: 3px;
+    border-style: solid;
+    border-color: dodgerblue;
+    background-color: silver;
+}
+
 #pie{
+    display: flex;
+    justify-content: space-between;
     background-color: silver;
     border-width: 3px;
     border-color: dodgerblue;
     border-style: solid;
 }
 
-.ciudad{
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.ciudad ul{
+#pie ul{
     list-style: none;
 }
 
-#redes{
-    margin-left: 500px;
-    margin-top: 0px;
+#pie strong{
+    font-size: 20px;
 }
 
-#enlaces_externos{
-    margin-left: 800px;
-    margin-top: 0px;
+#pie .ciudad{
+    padding: 10px;
+    padding-top: 20px;
+    color: dodgerblue;
+
+}
+
+#pie li > ul{
+    color: dodgerblue;
 }
