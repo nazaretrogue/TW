@@ -5,14 +5,15 @@
         <meta charset="utf-8"/>
         <meta name="author" content="Nazaret Román Guerrero"/>
         <title>El Lector de Libros</title>
+        <link rel="stylesheet" href="libreria_estilo.css">
     </head>
     <body>
-        <header>
+        <header id="cabecera">
             <img src="logo.jpg" alt="Logo librería"/>
             <h1>El Lector de Libros</h1>
             <p>Contando historias desde hace 100 años</p>
         </header>
-        <section>
+        <section id="paginas_indice">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
@@ -21,8 +22,9 @@
                 <li><a href="pedidos.html">Pedidos</a></li>
             </ul>
         </section>
-        <main>
+        <div id="centro"><main id="pedidos_form">
             <div>
+                <img src="pedido.png" alt="pedido" width="100" height="100"/>
                 <ul>
                     <li>Título <em>El título del libro</em></li>
                     <li>Autor <em>Pepito Pérez</em></li>
@@ -34,7 +36,6 @@
                    parte se pondrá un pequeño resumen de unas líneas del libro
                    que el cliente quiere para su pedido.</p>
                 <p>PRECIO <em>15 euros</em></p>
-                <img src="pedido.png" alt="pedido" width="100" height="100"/>
             </div>
 
             <form action="procesar.php" method="POST">
@@ -49,10 +50,10 @@
                     <input type="checkbox" name="opciones" value="novedades"/> Deseo recibir información sobre novedades
                     <input type="checkbox" name="opciones" value="regalo"/> Deseo el envío envuelto para regalo
                 </p>
-                <input type="submit" value="Hacer pedido"/>
+                <input id="enviar_ped" type="submit" value="Hacer pedido"/>
             </form>
         </main>
-        <aside>
+        <aside id="rankings">
             <div>Más vendido
                 <ol>
                     <li>Memorias de Idhún: la Resistencia</li>
@@ -74,32 +75,32 @@
                     <li>Fantasía</li>
                 </ol>
             </div>
-        </aside>
-        <footer>
+        </aside></div>
+        <footer id="pie">
             <div>
                 <ul>
-                    <li>Granada</li>
+                    <li class="ciudad"><strong>Granada</strong></li>
                     <li><ul>
                             <li>Reyes Católicos (958123456)</li>
                             <li>Avda Dilar (958076543)</li>
                         </ul>
                     </li>
-                    <li>Málaga</li>
+                    <li class="ciudad"><strong>Málaga</strong></li>
                     <li><ul>
                             <li>Marqués de Larios (928123476)</li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div>
-                <img src="mail.png" alt="Mail" width="50" height="50"/>
+            <div id="redes">
+                <img id="mail" src="mail.png" alt="Mail" width="50" height="50"/>
                 <p>lectordelibros@gmail.com</p>
                 <img src="twitter.png" alt="Twitter" width="50" height="50"/>
                 <img src="facebook.png" alt="Facebook" width="50" height="50"/>
                 <img src="pinterest.png" alt="Pinterest" width="50" height="50"/>
                 <img src="wifi.png" alt="Wifi" width="50" height="50"/>
             </div>
-            <div>
+            <div id="enlaces_externos">
                 <ul>
                     <li><a href="#empresa">La empresa</a></li>
                     <li><a href="#politica">Política de envío</a></li>

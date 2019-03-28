@@ -1,6 +1,7 @@
 body{
     display: flex;
     flex-direction: column;
+    font-size: 125%;
 }
 
 #centro{
@@ -9,43 +10,18 @@ body{
 
 aside{
     align-self: flex-start;
+    width: 500px;
+    font-size: 130%;
+    color: blue;
 }
 
-main section h2{
-    font-size: 50px;
-    color: navy;
-    text-align: center;
-    text-decoration: underline;
+aside div{
+    margin: 30px;
 }
 
-main h3{
-    font-size: 30px;
+aside ol{
+    font-size: 70%;
     color: dodgerblue;
-}
-
-#martin img,
-#cielo img,
-#relatos img{
-    float: right;
-}
-
-#martin,
-#cielo,
-#relatos{
-    padding-bottom: 100px;
-    margin-bottom: 100px;
-}
-
-
-main section ul{
-    list-style: none;
-}
-
-main{
-    border: 3px;
-    border-style: solid;
-    border-color: dodgerblue;
-    background-color: silver;
 }
 
 #cabecera{
@@ -58,7 +34,8 @@ main{
     margin-top: 0px;
 }
 
-section{
+section,
+#cabecera::after{
     clear: both;
 }
 
@@ -85,10 +62,15 @@ section{
     padding: 0px;
     margin: 0px;
     overflow: hidden;
+    font-size: 110%;
 }
 
 #paginas_indice li{
     float: left;
+}
+
+#paginas_indice::after{
+    clear: both;
 }
 
 li a{
@@ -133,4 +115,173 @@ li a{
 
 #pie li > ul{
     color: dodgerblue;
+}
+
+main{
+    background-color: silver;
+    border-width: 3px;
+    border-style: solid;
+    border-color: dodgerblue;
+}
+
+/* main de index.html */
+
+#eventos{
+    width: 2000px;
+}
+
+#eventos section h2{
+    font-size: 50px;
+    color: navy;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#eventos h3{
+    font-size: 30px;
+    color: dodgerblue;
+}
+
+#martin img,
+#cielo img,
+#relatos img{
+    float: right;
+}
+
+#martin,
+#cielo,
+#relatos{
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+
+#eventos section ul{
+    list-style: none;
+}
+
+/* main de catalogo.html */
+
+#catal_libros{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 90%;
+    color: blue;
+}
+
+#catal_libros p{
+    font-family: fantasy;
+    font-size: 90%;
+    color: darkslategray;
+}
+
+#catal_libros input{
+    background-color: blue;
+    border-color: blue;
+}
+
+#catal_libros img{
+    float: center;
+    margin: 20px;
+}
+
+#catal_libros section{
+    margin: 40px;
+}
+
+#catal_libros h2,
+#catal_libros p{
+    clear: both;
+}
+
+#catal_libros::after{
+    clear: both;
+}
+
+/* main de busqueda.html */
+
+#busqueda_libro{
+    width: 800px;
+    height: 600px;
+    margin-right: 615px;
+}
+
+#busqueda_libro p:nth-child(6){
+    display: flex;
+    flex-direction: column;
+}
+
+/* main de tienda.html */
+
+#tienda{
+    padding: 80px;
+}
+
+#tienda caption{
+    font-size: 180%;
+    color: blue;
+    margin-bottom: 35px;
+}
+
+#tienda th{
+    background-color: dodgerblue;
+    color: white;
+}
+
+#tienda td:hover{
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* main de pedidos.html */
+
+#pedidos_form{
+    padding: 30px;
+}
+
+#pedidos_form img{
+    float: left;
+    margin-right: 35px;
+}
+
+#pedidos_form::after{
+    clear:both;
+}
+
+#pedidos_form ul{
+    list-style: none;
+    color: dodgerblue;
+}
+
+#pedidos_form em{
+    font-weight: bold;
+}
+
+#pedidos_form div p{
+    color: dodgerblue;
+}
+
+#pedidos_form p:nth-child(7){
+    display: flex;
+    flex-direction: column;
+}
+
+#pedidos_form input,
+#pedidos_form textarea{
+    border-color: dodgerblue;
+    border-style: solid;
+    border-width: 3px;
+    background-color: white;
+}
+
+/* botones comunes a busqueda.html y pedidos.html*/
+
+#busqueda_libro #enviar_bus,
+#pedidos_form #enviar_ped{
+    background-color: blue;
+    border-color: blue;
+    width: 120px;
+    height: 40px;
+    display: block;
+    margin: auto;
 }
