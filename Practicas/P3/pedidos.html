@@ -45,11 +45,11 @@
                 <p>Número de tarjeta <input type="text" name="tarjeta"/></p>
                 <p>Fecha de caducidad <input type="text" name="caducidad" maxlength="13"/></p>
                 <p>CVC <input type="text" name="cvc" maxlength="4"/></p>
-                <p>Marque si procede
-                    <input type="checkbox" name="opciones" value="condiciones"/> He leído y acepto las condiciones de compra
-                    <input type="checkbox" name="opciones" value="novedades"/> Deseo recibir información sobre novedades
-                    <input type="checkbox" name="opciones" value="regalo"/> Deseo el envío envuelto para regalo
-                </p>
+                <div><p>Marque si procede<p>
+                    <label><input type="checkbox" name="opciones" value="condiciones"/> He leído y acepto las condiciones de compra</label>
+                    <label><input type="checkbox" name="opciones" value="novedades"/> Deseo recibir información sobre novedades</label>
+                    <label><input type="checkbox" name="opciones" value="regalo"/> Deseo el envío envuelto para regalo</label>
+                </div>
                 <input id="enviar_ped" type="submit" value="Hacer pedido"/>
             </form>
         </main>
