@@ -2,10 +2,7 @@
 
 $db = mysqli_connect("localhost", "nazaretrogue1819", "kOKKvziN", "nazaretrogue1819");
 
-if($db)
-    echo "<p>Conexión establecida</p>";
-
-else
+if(!$db)
 {
     echo "<p>Error</p>";
     echo "<p>Código: ".mysqli_connect_errno()."</p>";
@@ -23,9 +20,11 @@ if(mysqli_num_rows($query)>0)
 
     while($libro=mysqli_fetch_array($query))
     {
+        $data = base64_encode($libro['portada']);
+
         echo <<< CONSULTA
             <section>
-                <img src={$libro['portada']} width="200" height="300"/>
+                <img src='data:image/jpeg;base64,$data' width="200" height="300"/>
                 <h2><strong>{$libro['titulo']}</strong></h2>
                 <p>{$libro['autor']}</p>
                 <p>{$libro['editorial']}</p>

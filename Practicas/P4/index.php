@@ -16,12 +16,13 @@ switch ($_GET['acc']) {
     default: break;
 }
 
+include_once "aside.php";
 include_once "footer.html";
 include_once "end.html";
 
 function HTML_menu_nav($activo){
 echo <<< HTML
-<nav>
+<nav id="paginas_indice">
 <h1> indice </h1>
 <ul>
 HTML;
