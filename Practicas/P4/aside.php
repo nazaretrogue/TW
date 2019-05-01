@@ -18,17 +18,36 @@ if(!$db)
 
 mysqli_set_charset($db, "utf8");
 
-// $query = mysqli_query($db, "SELECT autor FROM libros AS I WHERE count(autor) > ANY (SELECT count(autor) from libros AS L WHERE L.autor != I.autor)");
+$query = mysqli_query($db, "SELECT autor, COUNT(*) FROM libros GROUP BY autor ORDER BY COUNT(*) DESC");
 
 if(!empty($query) && mysqli_num_rows($query)>0)
 {
-    $autor1 = mysqli_fetch_array($query);
-    $autor2 = $autor1['autor'];
+    $data = "";
 
-    echo "$autor2";
+    while($autor3 == "")
+    {
+        $data = mysqli_fetch_array($query);
+
+        if($autor1 == "")
+            $autor1 = $data['autor'];
+
+        elseif($autor2 == "" && $data['autor'] != $autor1)
+            $autor2 = $data['autor'];
+
+        elseif($autor3 == "" && $data['autor'] != $autor1 && $data['autor'] != $autor2)
+            $autor3 = $data['autor'];
+    }
 }
 
-echo "</aside></div>";
+echo <<< HTML
+<p>Más populares</p>
+<ol>
+    <li>$autor1</li>
+    <li>$autor2</li>
+    <li>$autor3</li>
+</ol>
+</aside></div>
+HTML;
 
 mysqli_close($db);
 
