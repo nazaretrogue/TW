@@ -71,45 +71,43 @@ HTML;
 
 function FormConfirma($query)
 {
-    $err = false;
-
     if(!isset($_POST["cliente"]) || !NombreValido($_POST["cliente"]))
     {
         echo "<p class=\"error\">El nombre debe estar relleno con caracteres alfabéticos</p>";
-        $err = true;
+        $err['cliente'] = true;
     }
 
     if(!isset($_POST["direc"]))
     {
         echo "<p class=\"error\">La dirección no puede estar vacía</p>";
-        $err = true;
+        $err['direc'] = true;
     }
 
     if(!isset($_POST["email"]) || !EmailValido($_POST["email"]))
     {
         echo "<p class=\"error\">El e-mail debe tener la forma usuario@servidor.extension</p>";
-        $err = true;
+        $err['email'] = true;
     }
 
     if(!isset($_POST["tarjeta"]) || !TarjetaValida($_POST["tarjeta"]))
     {
         echo "<p class=\"error\">Número de tarjeta erróneo</p>";
-        $err = true;
+        $err['tarjeta'] = true;
     }
 
     if(!isset($_POST["caduc"]) || !CaducidadValida($_POST["caduc"]))
     {
         echo "<p class=\"error\">Fecha no válida</p>";
-        $err = true;
+        $err['caduc'] = true;
     }
 
     if(!isset($_POST["cvc"]) || !CVCValido($_POST["cvc"]))
     {
         echo "<p class=\"error\">El CVC debe constar de 3 dígitos</p>";
-        $err = true;
+        $err['cvc'] = true;
     }
 
-    if(!$err)
+    if(empty($err))
     {
         if(mysqli_num_rows($query)>0)
         {
@@ -138,6 +136,69 @@ HTML;
 
             echo "</main>";
         }
+    }
+
+    else
+    {
+        echo "<div id=\"centro\"><main id=\"catal_libros\">";
+
+        $libro = mysqli_fetch_array($query);
+        $data = base64_encode($libro['portada']);
+
+        echo <<< HTML
+            <div class="datos_libro">
+                <img src='data:image/jpeg;base64,$data' width="200" height="300"/>
+                <h2>{$libro['titulo']}</h2>
+                <p>{$libro['autor']}</p>
+                <p>{$libro['editorial']}</p>
+                <p>{$libro['precio']}€</p>
+            </div>
+            <div class="datos_cli">
+                <class='boton_compra'><form action="pedidos.php" method='POST'>
+HTML;
+
+        echo "<label>Nombre y apellidos<input type=\"text\" name=\"cliente\"";
+        if(isset($err) && array_key_exists('cliente', $err))
+            echo "/></label><p class=\"error\">El nombre debe estar relleno con caracteres alfabéticos</p>";
+        else
+            echo " value='".$_POST['cliente']."'/></label>";
+
+
+        echo "<label>Dirección<input type=\"text\" name=\"direc\"";
+        if(isset($err) && array_key_exists('direc', $err))
+            echo "/></label><p class=\"error\">La dirección no puede estar vacía</p>";
+        else
+            echo " value='".$_POST['direc']."'/></label>";
+
+
+        echo "<label>E-mail<input type=\"text\" name=\"email\"";
+        if(isset($err) && array_key_exists('email', $err))
+            echo "/></label><p class=\"error\">El e-mail debe tener la forma usuario@servidor.extension</p>";
+        else
+            echo " value='".$_POST['email']."'/></label>";
+
+
+        echo "<label>Nº de tarjeta<input type=\"text\" name=\"tarjeta\"";
+        if(isset($err) && array_key_exists('tarjeta', $err))
+            echo "/></label><p class=\"error\">Número de tarjeta erróneo</p>";
+        else
+            echo " value='".$_POST['tarjeta']."'/></label>";
+
+
+        echo "<label>Fecha de caducidad(mm/aa)<input type=\"text\" name=\"caduc\"";
+        if(isset($err) && array_key_exists('caduc', $err))
+            echo "/><p class=\"error\">Fecha no válida</p>";
+        else
+            echo " value='".$_POST['caduc']."'/></label>";
+
+
+        echo "<label>CVC<input type=\"text\" name=\"cvc\"";
+        if(isset($err) && array_key_exists('cvc', $err))
+            echo "/></label><p class=\"error\">El CVC debe constar de 3 dígitos</p>";
+        else
+            echo " value='".$_POST['cvc']."'/></label>";
+
+        echo "</form></main>";
     }
 }
 
