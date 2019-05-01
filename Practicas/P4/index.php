@@ -11,7 +11,6 @@ HTML_menu_nav($_GET["acc"]);
 
 switch ($_GET['acc']) {
     case "Catalogo": include "catalogo.php"; break;
-    case "Pedidos": include "pedidos.php"; break;
     case "Tienda": include "tienda.html"; break;
     default:
         echo "<div><main class=\"centro\"><h2>Bienvenidos al Lector de Libros</h2>";
@@ -28,7 +27,7 @@ echo <<< HTML
 <ul>
 HTML;
 
-    $items = ["Catalogo"=>"Catalogo", "Pedidos"=>"Pedidos", "Tienda"=>"Tienda"];
+    $items = ["Catalogo"=>"Catalogo", "Tienda"=>"Tienda"];
     foreach ($items as $key => $value)
         echo "<li".($key==$activo?" class='activo'":"").">"."<a href='index.php?acc=".($key)."'>".$value."</a></li>";
 

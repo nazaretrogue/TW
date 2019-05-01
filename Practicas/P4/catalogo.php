@@ -25,12 +25,14 @@ if(mysqli_num_rows($query)>0)
         echo <<< CONSULTA
             <section>
                 <img src='data:image/jpeg;base64,$data' width="200" height="300"/>
-                <h2><strong>{$libro['titulo']}</strong></h2>
+                <h2>{$libro['titulo']}</h2>
                 <p>{$libro['autor']}</p>
                 <p>{$libro['editorial']}</p>
                 <p>{$libro['precio']}€</p>
-                <form>
-                    <input type="submit" value="Comprar"/>
+                <class='boton_compra'><form action="pedidos.php" method='POST'>
+                    <input type='hidden' name='accion' value='compra'/>
+                    <input type='hidden' name='ISBN' value='{$libro['ISBN']}'/>
+                    <input type="submit" name='comprar' value="Comprar"/>
                 </form>
             </section>
 CONSULTA;
