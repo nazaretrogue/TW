@@ -37,7 +37,7 @@ function FormCompra($query)
 {
     if(mysqli_num_rows($query)>0)
     {
-        echo "<div id=\"centro\"><main id=\"catal_libros\">";
+        echo "<div class=\"centro\"><main class=\"catal_libros\">";
 
         $libro = mysqli_fetch_array($query);
         $data = base64_encode($libro['portada']);
@@ -111,7 +111,7 @@ function FormConfirma($query)
     {
         if(mysqli_num_rows($query)>0)
         {
-            echo "<div id=\"centro\"><main id=\"catal_libros\">";
+            echo "<div class=\"centro\"><main class=\"catal_libros\">";
 
             $libro = mysqli_fetch_array($query);
             $data = base64_encode($libro['portada']);
@@ -140,7 +140,7 @@ HTML;
 
     else
     {
-        echo "<div id=\"centro\"><main id=\"catal_libros\">";
+        echo "<div class=\"centro\"><main class=\"catal_libros\">";
 
         $libro = mysqli_fetch_array($query);
         $data = base64_encode($libro['portada']);
