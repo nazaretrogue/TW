@@ -51,7 +51,7 @@ function FormCompra($query)
                 <p>{$libro['precio']}€</p>
             </div>
             <div class="datos_cli">
-                <class='boton_compra'><form action="pedidos.php" method='POST'>
+                <class='boton_compra'><form action="pedidos.php" method='POST' enctype='multipart/form-data'>
                     <label>Nombre y apellidos<input type="text" name="cliente"/></label>
                     <label>Dirección<input type="text" name="direc"/></label>
                     <label>E-mail<input type="text" name="email"/></label>
@@ -60,7 +60,7 @@ function FormCompra($query)
                     <label>CVC<input type="text" name="cvc"/></label>
                     <input type='hidden' name='accion' value='confirma'/>
                     <input type='hidden' name='ISBN' value='{$libro['ISBN']}'/>
-                    <input type="submit" name='acept' value="Confirmar compra"/>
+                    <input type="submit" name='accept' value="Confirmar compra"/>
                 </form>
             </div>
 HTML;
@@ -154,7 +154,7 @@ HTML;
                 <p>{$libro['precio']}€</p>
             </div>
             <div class="datos_cli">
-                <class='boton_compra'><form action="pedidos.php" method='POST'>
+                <class='boton_compra'><form action="pedidos.php" method='POST' enctype='multipart/form-data'>
 HTML;
 
         echo "<label>Nombre y apellidos<input type=\"text\" name=\"cliente\"";

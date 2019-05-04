@@ -27,8 +27,8 @@ if(mysqli_num_rows($query)>0)
 
 echo <<< HTML
     <div class="centro"><main class="busqueda_libro">
-        <class='busqueda'><form action="index.php?acc=Catalogo" method='POST'>
-            <input type="text" name="palabra_clave_busqueda"/>
+        <class='busqueda'><form action="index.php?acc=Catalogo" method='POST' enctype='multipart/form-data'>
+            <label>Palabra clave de búsqueda: <input type="text" name="palabra_clave_busqueda"/></label>
             <p>Género <select name="genero">
                 <option selected>- Elija el género -</option>
 HTML;

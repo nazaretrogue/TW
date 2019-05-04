@@ -14,15 +14,17 @@ switch ($_GET['acc']) {
     case "Catalogo": include "catalogo.php"; break;
     case "Busqueda": include "busqueda.php"; break;
     case "Tienda": include "tienda.html"; break;
-    case "Login": echo " "; break;
+    case "Login": break;
     default:
         echo "<div><main class=\"centro\"><h2>Bienvenidos al Lector de Libros</h2>";
     break;
 }
 
-include_once "aside.php";
-include_once "footer.html";
-include_once "end.html";
+if($_GET["acc"] != "Login"){
+    include_once "aside.php";
+    include_once "footer.html";
+    include_once "end.html";
+}
 
 function HTML_menu_nav($activo){
 echo <<< HTML
