@@ -4,7 +4,8 @@ include_once "header.html";
 
 if(!isset($_GET["acc"]))
     $_GET['acc'] = "";
-elseif ($_GET["acc"] != "Catalogo" && $_GET["acc"] != "Pedidos" && $_GET["acc"] != "Tienda" && $_GET["acc"] != "Busqueda")
+elseif ($_GET["acc"] != "Catalogo" && $_GET["acc"] != "Pedidos" && $_GET["acc"] != "Tienda" && $_GET["acc"] != "Busqueda"
+        && $_GET["acc"] != "Login")
     $_GET['acc'] = "";
 
 HTML_menu_nav($_GET["acc"]);
@@ -13,6 +14,7 @@ switch ($_GET['acc']) {
     case "Catalogo": include "catalogo.php"; break;
     case "Busqueda": include "busqueda.php"; break;
     case "Tienda": include "tienda.html"; break;
+    case "Login": echo " "; break;
     default:
         echo "<div><main class=\"centro\"><h2>Bienvenidos al Lector de Libros</h2>";
     break;
@@ -28,9 +30,15 @@ echo <<< HTML
 <ul>
 HTML;
 
-    $items = ["Catalogo"=>"Catalogo", "Busqueda"=>"Busqueda", "Tienda"=>"Tienda"];
+    $items = ["Catalogo"=>"Catalogo", "Busqueda"=>"Busqueda", "Tienda"=>"Tienda", "Login"=>"Login"];
     foreach ($items as $key => $value)
-        echo "<li".($key==$activo?" class='activo'":"").">"."<a href='index.php?acc=".($key)."'>".$value."</a></li>";
+    {
+        if($key != "Login")
+            echo "<li".($key==$activo?" class='activo'":"").">"."<a href='index.php?acc=".($key)."'>".$value."</a></li>";
+
+        else
+            echo "<li".($key==$activo?" class='activo'":"").">"."<a href='login.php'>".$value."</a></li>";
+    }
 
 echo <<< HTML
 </ul>
