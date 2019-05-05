@@ -4,15 +4,19 @@ body{
     font-size: 125%;
 }
 
-#centro{
+.centro{
     display: flex;
 }
 
 aside{
     align-self: flex-start;
-    width: 500px;
+    width: 20%;
     font-size: 130%;
     color: blue;
+}
+
+main{
+    width: 80%;
 }
 
 aside div{
@@ -122,173 +126,141 @@ main{
     border-width: 3px;
     border-style: solid;
     border-color: dodgerblue;
-}
-
-/* main de index.html */
-
-#eventos{
-    width: 2000px;
-}
-
-#eventos section h2{
-    font-size: 50px;
-    color: navy;
-    text-align: center;
-    text-decoration: underline;
-}
-
-#eventos h3{
-    font-size: 30px;
-    color: dodgerblue;
-}
-
-#martin img,
-#cielo img,
-#relatos img{
-    float: right;
-}
-
-#martin,
-#cielo,
-#relatos{
-    padding-bottom: 100px;
-    margin-bottom: 100px;
-}
-
-
-#eventos section ul{
-    list-style: none;
+    padding: 1.5%;
 }
 
 /* main de catalogo.html */
 
-#catal_libros{
+.catal_libros{
     display: flex;
     flex-wrap: wrap;
     font-size: 90%;
     color: blue;
 }
 
-#catal_libros p{
+.catal_libros p{
     font-family: fantasy;
     font-size: 90%;
     color: darkslategray;
 }
 
-#catal_libros input{
+.catal_libros input{
     background-color: blue;
     border-color: blue;
 	color: white;
+    margin-left: 30%;
 }
 
-#catal_libros img{
+.catal_libros img{
     float: center;
     margin: 20px;
 }
 
-#catal_libros section{
+.catal_libros section{
     margin: 40px;
 }
 
-#catal_libros h2,
-#catal_libros p{
+.catal_libros h2,
+.catal_libros p{
+    margin-left: 15%;
     clear: both;
 }
 
-#catal_libros::after{
+.catal_libros::after{
     clear: both;
 }
 
 /* main de busqueda.html */
 
-#busqueda_libro{
-    width: 800px;
-    height: 469px;
-    margin-right: 615px;
+.busqueda_libro h2{
+    padding-left: 1.5%;
 }
 
-#busqueda_libro div label{
+.busqueda_libro label{
     display: block;
+    padding-left: 1.5%;
 }
 
-#busqueda_libro input{
-    border-color: dodgerblue;
-    border-style: solid;
-    border-width: 3px;
-    background-color: white;
+.busqueda_libro input,
+.busqueda_libro select{
+    background-color: blue;
+    border-color: blue;
+	color: white;
+    margin: 1.5%;
+}
+
+.busqueda_libro::after{
+    clear: both;
 }
 
 /* main de tienda.html */
 
-#tienda{
-    padding: 80px;
+.tienda{
+    padding: 2%;
 }
 
-#tienda caption{
+.tienda caption{
     font-size: 180%;
     color: blue;
-    margin-bottom: 35px;
+    margin-bottom: 2%;
 }
 
-#tienda th{
+.tienda th{
     background-color: dodgerblue;
     color: white;
 }
 
-#tienda td:hover{
+.tienda td:hover{
     background-color: dodgerblue;
     color: white;
 }
 
-/* main de pedidos.html */
+/* main de login */
 
-#pedidos_form{
-    padding: 30px;
-}
-
-#pedidos_form img{
-    float: left;
-    margin-right: 35px;
-}
-
-#pedidos_form::after{
-    clear:both;
-}
-
-#pedidos_form ul{
-    list-style: none;
-    color: dodgerblue;
-}
-
-#pedidos_form em{
-    font-weight: bold;
-}
-
-#pedidos_form div p{
-    color: dodgerblue;
-}
-
-#pedidos_form form div label{
+.logueo label{
     display: block;
+    padding-left: 1.5%;
 }
 
-#pedidos_form input,
-#pedidos_form textarea{
-    border-color: dodgerblue;
-    border-style: solid;
-    border-width: 3px;
-    background-color: white;
+.logueo h2{
+    padding-left: 1.5%;
 }
 
-/* botones comunes a busqueda.html y pedidos.html*/
-
-#busqueda_libro #enviar_bus,
-#pedidos_form #enviar_ped{
+.logueo input{
     background-color: blue;
     border-color: blue;
-    width: 120px;
-    height: 40px;
+	color: white;
+    margin: 1.5%;
+}
+
+/* main pedidos */
+
+.pedidos{
+    display: flex;
+    padding: 3%;
+}
+
+.datos_cli label{
+    margin: 3%;
+    margin-top: 3.5%;
+    margin-left: 60%;
+    font-size: 130%;
+}
+
+.datos_libro{
+    margin: 3%;
+}
+
+.datos_cli input{
     display: block;
-    margin: auto;
-    color: white;
+    background-color: blue;
+    border-color: blue;
+	color: white;
+    margin: 1.5%;
+    margin-left: 60%;
+    width: 110%;
+}
+
+.error{
+    color: red;
 }

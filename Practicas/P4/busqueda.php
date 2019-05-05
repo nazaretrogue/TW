@@ -27,19 +27,20 @@ if(mysqli_num_rows($query)>0)
 
 echo <<< HTML
     <div class="centro"><main class="busqueda_libro">
-        <class='busqueda'><form action="index.php?acc=Catalogo" method='POST' enctype='multipart/form-data'>
+        <h2>Indique una palabra clave o el género del libro que desea buscar</h2>
+        <form action="index.php?acc=Catalogo" method='POST' enctype='multipart/form-data'>
             <label>Palabra clave de búsqueda: <input type="text" name="palabra_clave_busqueda"/></label>
-            <p>Género <select name="genero">
+            <label>Género: <select name="genero">
                 <option selected>- Elija el género -</option>
 HTML;
 
                 for($i=0; $i<sizeof($array_generos); $i++)
-                    echo "<option>".$array_generos[$i]."</option>";
+                    echo "<option>".htmlentities($array_generos[$i])."</option>";
 
 echo <<< HTML
-            </select></p>
+            </select></label>
             <input type="submit" name='clave_busq' value="Aceptar"/>
-        </form></main></div>
+        </form></main>
 HTML;
 
 mysqli_close($db);

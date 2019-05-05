@@ -14,7 +14,7 @@ mysqli_set_charset($db, "utf8");
 
 if(isset($_POST['palabra_clave_busqueda']))
 {
-    $palabra = $_POST['palabra_clave_busqueda'];
+    $palabra = strip_tags($_POST['palabra_clave_busqueda']);
     $query = mysqli_query($db, "SELECT * FROM libros");
 
     if(mysqli_num_rows($query)>0)
@@ -54,20 +54,22 @@ function Mostrar($libro)
 {
     $data = base64_encode($libro['portada']);
 
-    echo <<< CONSULTA
+    echo <<< HTML
         <section>
             <img src='data:image/jpeg;base64,$data' width="200" height="300"/>
-            <h2>{$libro['titulo']}</h2>
-            <p>{$libro['autor']}</p>
-            <p>{$libro['editorial']}</p>
-            <p>{$libro['precio']}€</p>
+HTML;
+            echo "<h2>".htmlentities($libro['titulo'])."</h2>";
+            echo "<p>".htmlentities($libro['autor'])."</p>";
+            echo "<p>".htmlentities($libro['editorial'])."</p>";
+            echo "<p>".htmlentities($libro['precio'])."</p>";
+        echo <<< HTML
             <class='boton_compra'><form action="pedidos.php" method='POST'>
                 <input type='hidden' name='accion' value='compra'/>
                 <input type='hidden' name='ISBN' value='{$libro['ISBN']}'/>
                 <input type="submit" name='comprar' value="Comprar"/>
             </form>
         </section>
-CONSULTA;
+HTML;
 }
 
 mysqli_close($db);

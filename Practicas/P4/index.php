@@ -16,9 +16,10 @@ switch ($_GET['acc']) {
     case "Tienda": include "tienda.html"; break;
     case "Login": break;
     default:
-        echo "<div><main class=\"centro\"><h2>Bienvenidos al Lector de Libros</h2>";
+        echo "<div class=\"centro\"><main><h2>Bienvenidos al Lector de Libros</h2></main>";
     break;
 }
+
 
 if($_GET["acc"] != "Login"){
     include_once "aside.php";
