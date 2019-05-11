@@ -1,4 +1,5 @@
 <?php
+include_once "HTML_creation.php";
 
 session_start();
 
@@ -20,17 +21,7 @@ elseif ($_GET["acc"] != "Catalogo" && $_GET["acc"] != "Pedidos" && $_GET["acc"] 
         && $_GET["acc"] != "Login")
     $_GET['acc'] = "";
 
-HTML_menu_nav($_GET["acc"]);
-
-switch ($_GET['acc']) {
-    case "Catalogo": include "catalogo.php"; break;
-    case "Busqueda": include "busqueda.php"; break;
-    case "Tienda": include "tienda.html"; break;
-    case "Nuevo libro": break;
-    case "Modificar libro": break;
-    case "Eliminar libro": break;
-    case "Login": break;
-}
+HTML_menu_nav_login($_GET["acc"]);
 
 echo "<div class=\"centro\"><main class=\"logueo\">";
 
@@ -39,22 +30,22 @@ if(isset($_SESSION["usuario"]))
     echo <<< HTML
         <h2>Bienvenido {$_SESSION["usuario"]}, ¿qué necesitas?</h2>
 
-        <class='bot_ges'><form action="gestionar_db.php" method='POST' enctype='multipart/form-data'>
+        <class='bot_ges'><form action="gestionar_db.php" method='POST'>
             <input type="hidden" name="accion" value="crear"/>
             <input type="submit" name="crear" value="Añadir libro"/>
         </form>
 
-        <class='bot_ges'><form action="gestionar_db.php" method='POST' enctype='multipart/form-data'>
+        <class='bot_ges'><form action="gestionar_db.php" method='POST'>
             <input type="hidden" name="accion" value="modificar"/>
             <input type="submit" name="modificar" value="Editar libro"/>
         </form>
 
-        <class='bot_ges'><form action="gestionar_db.php" method='POST' enctype='multipart/form-data'>
+        <class='bot_ges'><form action="gestionar_db.php" method='POST'>
             <input type="hidden" name="accion" value="borrar"/>
             <input type="submit" name="borrar" value="Eliminar libro"/>
         </form>
 
-        <class='form_log'><form action="index.php" method='POST' enctype='multipart/form-data'>
+        <class='form_log'><form action="index.php" method='POST'>
             <input type="submit" name="logout" value="Logout"/>
         </form>
 HTML;
@@ -93,36 +84,6 @@ function Desloguearse()
               $data['domain'], $data['secure'], $data['httponly']);
 
     session_destroy();
-}
-
-function HTML_menu_nav($activo){
-echo <<< HTML
-<nav id="paginas_indice">
-<ul>
-HTML;
-
-    $items = ["Catalogo"=>"Catalogo", "Busqueda"=>"Busqueda", "Tienda"=>"Tienda",
-              "Login"=>"Login", "Nuevo libro"=>"Nuevo libro", "Modificar libro"=>"Modificar libro",
-              "Eliminar libro"=>"Eliminar libro"];
-    foreach ($items as $key => $value)
-    {
-        if($key != "Login" && $key != "Nuevo libro" && $key != "Modificar libro" && $key != "Eliminar libro")
-            echo "<li".($key==$activo?" class='activo'":"").">"."<a href='index.php?acc=".($key)."'>".$value."</a></li>";
-
-        else if($key == "Login")
-            echo "<li".($key==$activo?" class='activo'":"").">"."<a href='login.php'>".$value."</a></li>";
-
-        else
-        {
-            if(isset($_SESSION['usuario']))
-                echo "<li".($key==$activo?" class='activo'":"").">"."<a href='login.php?acc=".($key)."'>".$value."</a></li>";
-        }
-    }
-
-echo <<< HTML
-</ul>
-</nav>
-HTML;
 }
 
 ?>

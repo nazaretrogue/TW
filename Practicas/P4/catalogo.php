@@ -1,4 +1,5 @@
 <?php
+include_once "HTML_creation.php";
 
 $db = mysqli_connect("localhost", "nazaretrogue1819", "kOKKvziN", "nazaretrogue1819");
 
@@ -11,11 +12,13 @@ if(!$db)
 }
 
 mysqli_set_charset($db, "utf8");
+$busqueda_palabra = false;
 
-if(isset($_POST['palabra_clave_busqueda']))
+if(isset($_POST['palabra_clave_busqueda']) && !isset($_POST['genero']))
 {
     $palabra = strip_tags($_POST['palabra_clave_busqueda']);
     $query = mysqli_query($db, "SELECT * FROM libros");
+    $busqueda_palabra = true;
 
     if(mysqli_num_rows($query)>0)
     {
@@ -40,7 +43,7 @@ elseif(isset($_POST['genero']))
 else
     $query = mysqli_query($db, "SELECT * FROM libros");
 
-if(mysqli_num_rows($query)>0)
+if(mysqli_num_rows($query)>0 && !$busqueda_palabra)
 {
     echo "<div class=\"centro\"><main class=\"catal_libros\">";
 
@@ -49,28 +52,6 @@ if(mysqli_num_rows($query)>0)
 }
 
 echo "</main>";
-
-function Mostrar($libro)
-{
-    $data = base64_encode($libro['portada']);
-
-    echo <<< HTML
-        <section>
-            <img src='data:image/jpeg;base64,$data' width="200" height="300"/>
-HTML;
-            echo "<h2>".htmlentities($libro['titulo'])."</h2>";
-            echo "<p>".htmlentities($libro['autor'])."</p>";
-            echo "<p>".htmlentities($libro['editorial'])."</p>";
-            echo "<p>".htmlentities($libro['precio'])."</p>";
-        echo <<< HTML
-            <class='boton_compra'><form action="pedidos.php" method='POST'>
-                <input type='hidden' name='accion' value='compra'/>
-                <input type='hidden' name='ISBN' value='{$libro['ISBN']}'/>
-                <input type="submit" name='comprar' value="Comprar"/>
-            </form>
-        </section>
-HTML;
-}
 
 mysqli_close($db);
 
